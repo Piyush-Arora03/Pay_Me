@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:icon="@drawable/baseline_10k_24"
+    android:id="@+id/search"
+    android:title="ifroom"
+    app:showAsAction="ifRoom" />
+    <item
+        android:icon="@drawable/baseline_10k_24"
+        android:id="@+id/alway"
+        android:title="always"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/baseline_10k_24"
+        android:id="@+id/never"
+        android:title="never"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/baseline_10k_24"
+        android:id="@+id/collapseActionView"
+        android:title="collapseActionView"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:icon="@drawable/baseline_10k_24"
+        android:id="@+id/withText"
+        android:title="withText"
+        app:showAsAction="withText" />
+
+</menu>

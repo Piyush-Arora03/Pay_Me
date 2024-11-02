@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFrag">
+
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.example.navigationcomponents.HomeFrag"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFrag_to_viewTransaction"
+            app:destination="@id/viewTransaction"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFrag_to_viewBalance_Frag"
+            app:destination="@id/viewBalance_Frag"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFrag_to_chooseReciever_Frag"
+            app:destination="@id/chooseReciever_Frag"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTransaction"
+        android:name="com.example.navigationcomponents.ViewTransaction_Frag"
+        android:label="View Transaction"
+        tools:layout="@layout/fragment_view_transaction" />
+    <fragment
+        android:id="@+id/viewBalance_Frag"
+        android:name="com.example.navigationcomponents.ViewBalance_Frag"
+        android:label="View Balance"
+        tools:layout="@layout/fragment_view_balance_" />
+    <fragment
+        android:id="@+id/chooseReciever_Frag"
+        android:name="com.example.navigationcomponents.ChooseReciever_Frag"
+        android:label="Choose Reciever"
+        tools:layout="@layout/fragment_choose_reciever_">
+        <action
+            android:id="@+id/action_chooseReciever_Frag_to_sendMoney_Frag"
+            app:destination="@id/sendMoney_Frag" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMoney_Frag"
+        android:name="com.example.navigationcomponents.SendMoney_Frag"
+        android:label="Send Money"
+        tools:layout="@layout/fragment_send_money_">
+        <argument
+            android:name="recievername"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_sendMoney_Frag_to_confirm_Dialog"
+            app:destination="@id/confirm_Dialog" />
+        <action
+            android:id="@+id/action_sendMoney_Frag_to_homeFrag"
+            app:destination="@id/homeFrag"
+            app:popUpTo="@id/homeFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/confirm_Dialog"
+        android:name="com.example.navigationcomponents.Confirm_Dialog"
+        android:label="Dialog"
+        tools:layout="@layout/fragment_confirm__dialog">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="ammount"
+            app:argType="long" />
+    </dialog>
+    <fragment
+        android:id="@+id/setting_frag"
+        android:name="com.example.navigationcomponents.Setting_frag"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting_frag" />
+    <fragment
+        android:id="@+id/aboutApp_Frag"
+        android:name="com.example.navigationcomponents.AboutApp_Frag"
+        android:label="fragment_about_app_"
+        tools:layout="@layout/fragment_about_app_" /><action android:id="@+id/action_global_aboutApp_Frag" app:destination="@id/aboutApp_Frag"/>
+    <fragment
+        android:id="@+id/notification_Frag"
+        android:name="com.example.navigationcomponents.Notification_Frag"
+        android:label="fragment_notification_"
+        tools:layout="@layout/fragment_notification_">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://www.notification.com" />
+    </fragment>
+</navigation>

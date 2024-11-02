@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseReciever_Frag">
+
+    <!-- TODO: Update blank fragment layout -->
+   <com.google.android.material.textfield.TextInputEditText
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:hint="enter the name of the reciver"
+       android:id="@+id/recivername"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"
+        android:layout_marginTop="60dp"
+        android:text="cancle"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SendMoney"
+        android:text="send"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="100dp"/>
+
+</FrameLayout>
