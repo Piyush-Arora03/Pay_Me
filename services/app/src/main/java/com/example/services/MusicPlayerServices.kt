@@ -49,31 +49,40 @@ class MusicPlayerServices : Service(){
 
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Log.d(MainActivity.Mytag,"start command")
         if (intent?.action == "com.example.MusicPlayerServices.PAUSE") {
-            mplayer.pause()
+            Log.d(MainActivity.Mytag,"pause")
+            pause()
         } else if (intent?.action == "com.example.MusicPlayerServices.PLAY") {
-            mplayer.start()
+            Log.d(MainActivity.Mytag,"Play")
+            play()
         } else if (intent?.action == "com.example.MusicPlayerServices.STOP") {
+            Log.d(MainActivity.Mytag,"stop")
+            stopSelf()
+            stopForeground(true)
             mplayer.stop()
+            mplayer.release()
         }
         else{
+            mplayer.start()
             shownotification()
         }
         return START_NOT_STICKY
     }
 
     private fun shownotification() {
+        Log.d(MainActivity.Mytag,"show notification")
         val intent=Intent(this,MusicPlayerServices::class.java)
         intent.action="com.example.MusicPlayerServices.PAUSE"
         val pasueintent=PendingIntent.getService(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
         val intent1=Intent(this,MusicPlayerServices::class.java)
         intent1.action="com.example.MusicPlayerServices.PLAY"
-        val playintent=PendingIntent.getService(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
+        val playintent=PendingIntent.getService(this,0,intent1,PendingIntent.FLAG_UPDATE_CURRENT)
 
         val intent2=Intent(this,MusicPlayerServices::class.java)
         intent2.action="com.example.MusicPlayerServices.STOP"
-        val stopintent=PendingIntent.getService(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
+        val stopintent=PendingIntent.getService(this,0,intent2,PendingIntent.FLAG_UPDATE_CURRENT)
 
 
         val notification=NotificationCompat.Builder(this, channelid)

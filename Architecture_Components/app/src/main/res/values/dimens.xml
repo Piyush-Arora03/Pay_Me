@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="note_recyclerview_margin">8dp</dimen>
+    <dimen name="note_layout_padding">8sp</dimen>
+    <dimen name="note_text_layout_margin">8dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

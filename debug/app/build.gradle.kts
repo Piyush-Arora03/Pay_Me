@@ -6,7 +6,9 @@ plugins {
 android {
     namespace = "com.example.debug"
     compileSdk = 34
-
+buildFeatures{
+    viewBinding=true
+}
     defaultConfig {
         applicationId = "com.example.debug"
         minSdk = 24
